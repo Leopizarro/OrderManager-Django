@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{%block content%}
+<div class="container">
+<div class="row row-cols-auto justify-content-md-center">
+{% for instance in products_list%}
+<div class="card col m-2" style="width: 18rem;">
+    <div class="card-body">
+        <h3>{{instance.title}}</h3>
+        <p class="mb-2 text-muted">${{instance.price}}</p>
+        <p>{{instance.description}}</p>
+        <p><a href='{{ instance.get_absolute_url }}'>Link to Product</a></p>
+        <p><a href="{% url 'create_order' userid instance.id %}">Hacer Pedido</a></p>
+    </div>
+
+</div>
+{%endfor%}
+</div>
+</div>
+
+
+{%endblock%}

@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{%block content%}
+{% for instance in motorista_list%}
+<div>
+    <p>{{instance.id}} - {{instance.nombre}} {{instance.apellido}}</p>
+    <p>{{instance.email}}</p>
+
+</div>
+{%endfor%}
+
+
+{%endblock%}

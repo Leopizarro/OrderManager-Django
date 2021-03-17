@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{%block content%}
+<div class="container card mt-3" style="width: 40rem;">
+    <div class="card-body">
+        <h1>Orden de producto: {{product.title}}</h1>
+        <h4>Estamos a un paso de que el producto esté en camino, {{request.user}}.</h4>
+
+        <form action="." method="POST"> {% csrf_token %}
+
+            {{form.as_p}}
+            <input class="btn btn-success" type='submit' value='Confirmar Pedido'>
+
+        </form>
+    </div>
+</div>
+
+{% endblock %}

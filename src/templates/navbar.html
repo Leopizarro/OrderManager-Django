@@ -1,0 +1,42 @@
+<nav class="navbar navbar-dark bg-dark">
+<div class="container-fluid">
+    <a class="navbar-brand">PRUEBA TÉCNICA TechK</a>
+    <div class="d-flex">
+        {% if user.is_authenticated %}
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'products'%}">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                </li>
+            </ul>
+        {% else %}
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'login' %}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'register' %}">Register</a>
+                </li>
+            </ul>
+        <!-- <div class ="container">
+            <div class="">
+                <a href="{% url 'products'%}">Productos en Venta</a>
+            </div>
+            <div class="">
+                <a href="{% url 'logout' %}">Logout</a>
+            </div>
+        </div>
+        
+        <div class ="container">
+            <a href="{% url 'login' %}">Login</a>
+        </div>
+        <div class ="container">
+            <a href="{% url 'register' %}">Register</a>
+        </div> -->
+        {%endif%}
+    </div>
+</div>
+</nav>
+
