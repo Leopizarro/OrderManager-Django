@@ -9,7 +9,7 @@
         <h3>{{instance.title}}</h3>
         <p class="mb-2 text-muted">${{instance.price}}</p>
         <p>{{instance.description}}</p>
-        <p><a href='{{ instance.get_absolute_url }}'>Link to Product</a></p>
+        <p><a href='{{ instance.get_absolute_url }}'>Detalles del Producto</a></p>
         <p><a href="{% url 'create_order' userid instance.id %}">Hacer Pedido</a></p>
     </div>
 
