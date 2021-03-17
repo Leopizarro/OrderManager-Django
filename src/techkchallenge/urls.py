@@ -15,7 +15,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from pages.views import home_view, about_view
 from products.views import product_create_view, product_individual_view, products_list_view
 from users.views import user_register_view
 from django.contrib.auth import views as auth_views
@@ -25,15 +24,14 @@ from pedidos.views import pedido_create_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home_view, name='home'),
-    path('about/', about_view),
+    path('', products_list_view, name='home-products'),
     path('products/', products_list_view, name='products'),
     path('create/', product_create_view),
     path('products/<int:id>/', product_individual_view),
     path('register/', user_register_view, name='register'),
     path('login/', auth_views.LoginView.as_view(template_name='users/user_login.html'), name="login"),
     path('logout/', auth_views.LogoutView.as_view(template_name='users/user_logout.html'), name="logout"),
-    path('motoristacreate/', create_motorista_view, name='crear_motorista'),
+    path('motoristas/create/', create_motorista_view, name='crear_motorista'),
     path('motoristas/', motorista_list_view, name='motoristas'),
     path('order/<int:uid>/<int:pid>/', pedido_create_view, name= 'create_order' )
 ]
